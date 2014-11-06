@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Form Validation Plugin</title>
+    <link rel="stylesheet" href="css/all.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.main.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <form action="#" class="form-validate">
+            <div class="form-item">
+                <label for="user-name">Name</label>
+                <input data-validate="required" type="text" id="user-name">
+            </div>
+            <div class="form-item">
+                <label for="email">E-mail</label>
+                <input data-validate="email" type="text" id="email">
+            </div>
+            <div class="form-item">
+                <label for="user-phone">Phone</label>
+                <input data-validate="required-number" type="text" id="user-phone">
+            </div>
+            <div class="form-item">
+                <label for="users-description">Massage</label>
+                <textarea data-validate="required" id="users-description"></textarea>
+            </div>
+            <div class="form-item">
+                <input type="submit" value="Send" class="form-submit">
+            </div>
+        </form>
+    </div><!-- #wrapper -->
+</body>
+</html>
