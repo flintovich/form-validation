@@ -18,6 +18,8 @@ function initFormValidation(){
 			inputWrapClass: '.form-item',
 			submitButton: 'input[type=submit]',
 			event: 'keyup change',
+			errorClass: 'error',
+			correctClass: 'correct',
 			successEvent: function(){}
 		}, options);
 		this.init();
@@ -52,32 +54,32 @@ function initFormValidation(){
 			switch (item.data(this.options.dataRequired)){
 				case 'required' :
 					if(value === ""){
-						item.closest(this.options.inputWrapClass).addClass('error').removeClass('correct');
+						item.closest(this.options.inputWrapClass).addClass(this.options.errorClass).removeClass(this.options.correctClass);
 					} else {
-						item.closest(this.options.inputWrapClass).removeClass('error').addClass('correct');
+						item.closest(this.options.inputWrapClass).removeClass(this.options.errorClass).addClass(this.options.correctClass);
 					}
 					break;
 				case 'email' :
 					var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
 					if(!pattern.test(value)){
-						item.closest(this.options.inputWrapClass).addClass('error').removeClass('correct');
+						item.closest(this.options.inputWrapClass).addClass(this.options.errorClass).removeClass(this.options.correctClass);
 					} else {
-						item.closest(this.options.inputWrapClass).removeClass('error').addClass('correct');
+						item.closest(this.options.inputWrapClass).removeClass(this.options.errorClass).addClass(this.options.correctClass);
 					}
 					break;
 				case 'required-number':
 					var reg = /^[0-9]+$/;
 					if(!reg.test(value) || value === ""){
-						item.closest(this.options.inputWrapClass).addClass('error').removeClass('correct');
+						item.closest(this.options.inputWrapClass).addClass(this.options.errorClass).removeClass(this.options.correctClass);
 					} else {
-						item.closest(this.options.inputWrapClass).removeClass('error').addClass('correct');
+						item.closest(this.options.inputWrapClass).removeClass(this.options.errorClass).addClass(this.options.correctClass);
 					}
 					break;
 				case 'required-select':
 					if(value === ""){
-						item.closest(this.options.inputWrapClass).addClass('error').removeClass('correct');
+						item.closest(this.options.inputWrapClass).addClass(this.options.errorClass).removeClass(this.options.correctClass);
 					} else {
-						item.closest(this.options.inputWrapClass).removeClass('error').addClass('correct');
+						item.closest(this.options.inputWrapClass).removeClass(this.options.errorClass).addClass(this.options.correctClass);
 
 					}
 					break;
@@ -85,7 +87,7 @@ function initFormValidation(){
 		},
 		checkValidate: function(){
 			var self = this;
-			if(self.requiredItems.length !== self.form.find('.correct').length){
+			if(self.requiredItems.length !== self.form.find('.'+this.options.correctClass).length){
 				self.requiredItems.each(function(){
 					var item = jQuery(this);
 					var val = item.val();
