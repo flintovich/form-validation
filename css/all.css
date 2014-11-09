@@ -20,14 +20,12 @@ a {
     text-decoration: none;
 }
 
-
 #wrapper{
     width: 1000px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
 }
-
 
 .form-validate {
     width: 900px; }
@@ -48,17 +46,21 @@ a {
     text-align: right;
     padding: 5px 30px 0 0; }
 .form-validate .form-item input,
+.form-validate .form-item select,
 .form-validate .form-item textarea {
     width: 425px !important;
     border: 1px solid #7c6b66;
     background: #efebe6;
     padding: 5px 10px; }
 .form-validate .form-item.error input,
+.form-validate .form-item.error select,
 .form-validate .form-item.error textarea {
     border: 1px solid #cc0000;
     background: #fffbf6;
+    box-shadow: 0 0 2px #cc0000;
 }
 .form-validate .form-item.correct input,
+.form-validate .form-item.correct select,
 .form-validate .form-item.correct textarea {
     border: 1px solid #42cc42;
     background: #fffbf6;

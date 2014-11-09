@@ -12,7 +12,7 @@
 </head>
 <body>
     <div id="wrapper">
-        <form action="#" class="form-validate">
+        <form action="#" method="post" class="form-validate">
             <div class="form-item">
                 <label for="user-name">Name</label>
                 <input data-validate="required" type="text" id="user-name">
@@ -28,6 +28,16 @@
             <div class="form-item">
                 <label for="users-description">Massage</label>
                 <textarea data-validate="required" id="users-description"></textarea>
+            </div>
+            <div class="form-item">
+                <label for="age">You age</label>
+                <select data-validate="required-select" name="age" id="age">
+                    <option value="">Select Age</option>
+                    <option value="18-">18-</option>
+                    <option value="18-25">18-25</option>
+                    <option value="25-40">25-40</option>
+                    <option value="40+">40+</option>
+                </select>
             </div>
             <div class="form-item">
                 <input type="submit" value="Send" class="form-submit">
